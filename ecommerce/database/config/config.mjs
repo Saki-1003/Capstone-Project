@@ -1,3 +1,4 @@
+import mysql from 'mysql2/promise';
 export default {
   development: {
     username: process.env.DB_USER,
@@ -5,6 +6,7 @@ export default {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: "mysql",
+    dialectModule: mysql
   },
   test: {
     username: process.env.DB_USER,
@@ -12,6 +14,7 @@ export default {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: "mysql",
+    dialectModule: mysql
   },
   production: {
     username: process.env.DB_USER,
@@ -19,5 +22,6 @@ export default {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: "mysql",
+    dialectModule: mysql
   },
 };

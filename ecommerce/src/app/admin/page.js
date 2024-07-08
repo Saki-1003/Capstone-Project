@@ -17,10 +17,10 @@ export default function CreateProductPage() {
       <input type="text" id="title" name="title" /><br />
       
       <label htmlFor="cost">Product cost:</label><br />
-      <input type="number" id="cost" name="cost" /><br />
+      <input type="text" id="cost" name="cost" /><br />
      
       <label htmlFor="price">Sell price:</label><br />
-      <input type="number" id="price" name="price" /><br />
+      <input type="text" id="price" name="price" /><br />
       
       <label htmlFor="quantity">Quantity:</label><br />
       <input type="number" id="quantity" name="quantity" /><br />

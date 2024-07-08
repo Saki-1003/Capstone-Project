@@ -2,6 +2,7 @@
 import { postProduct } from "./product"
 
 export async function createProduct (formData) {
+  console.log('product create')
   const product = {
     product_code: formData.get('code'), 
     product_title: formData.get('title'), 
