@@ -11,7 +11,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import NavDrawer from './NavDrawer';
 import WishlistDrawer from './WishlistDrawer';
 
-export default async function Header() {
+export default function Header() {
   // const [products, setProducts] = useState({}) 
   const visibilityRef = useRef()
   

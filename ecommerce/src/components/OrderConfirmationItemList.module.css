@@ -1,0 +1,28 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+@value cGrey: #3b3b3b;
+
+.item_container {
+  margin-bottom: 3rem;
+}
+
+.title {
+  width: 40%;
+  color: cGrey;
+  font-size: 2rem;
+  display: inline-block;
+  margin-bottom: 1rem;;
+}
+.sell_price {
+  width: 40%;
+  text-align: right;
+  display: inline-block;
+  color: cGrey;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.quantity {
+  color: cGrey;
+  font-size: 1.5rem;
+}

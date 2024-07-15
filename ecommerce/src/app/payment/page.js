@@ -2,26 +2,31 @@
 import { useContext } from "react"
 import { ShoppingCartContext } from "@/context/ShoppingCartContext"
 import OrderConfirmationListItem from "@/components/OrderConfirmationItemList"
+import PaymentForm from "@/components/form/PaymentForm"
+import styles from '../page.module.css'
 
-export default function CheckoutPage() {
+export default function PaymentPage() {
   const {cartContent} = useContext(ShoppingCartContext)
-  const itemsInCart = cartContent.map((product)=><OrderConfirmationListItem product={product} />)
+  console.log(cartContent)
+  const itemsInCart = cartContent.length && cartContent.map((product)=><OrderConfirmationListItem product={product} />)
 
-  
+  const subTotal = cartContent.map((product)=> product.quantity*product.sell_price)
+  const totalAmount = subTotal.reduce((accu, curr) => accu + curr, 0)
 
   return(
-    <main style={{display:"flex", gap: "20rem"}}>
-      <section>
-        <h2>Order Confirmation</h2>
-        {itemsInCart}
-        <p>Total:</p>
-      </section>
-
-      <section>
-       
-        
-      </section>
-   
-  </main>
+    <main>
+      <div className={styles.div_flexbox}>
+        <section className={styles.checkout_side}>
+          <h2 className={styles.order_confirmation}>Order Confirmation</h2>
+          {itemsInCart}
+          <p className={styles.total}>Total amount:</p> 
+          <p className={styles.amount}>NZD {totalAmount}</p>
+        </section>
+        <section  className={styles.checkout_section}>
+          <PaymentForm />     
+        </section>
+      </div>
+    
+     </main>
   )
 }

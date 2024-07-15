@@ -1,7 +1,10 @@
+"use client"
+
 import { getUsers } from "@/backend/db_query/user"
 import { LoginContext } from "@/context/LoginContext"
 import { useState, useContext} from 'react'
 import styles from './ShippingAddressForm.module.css'
+import Link from "next/link"
 
 
 export default function ShippingAddressForm(){
@@ -61,7 +64,7 @@ export default function ShippingAddressForm(){
         <label className={styles.label} htmlFor="country">Country *</label>
         <input className={styles.input} value={user.country} type="text" id="country" name="country" /><br />
         
-        <button className={styles.btn} type="button">NEXT</button>
+        <button className={styles.btn} type="button"><Link href="/payment">NEXT</Link></button>
       </form>
     </main>
   )

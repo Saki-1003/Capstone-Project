@@ -6,18 +6,24 @@ import { LoginContext } from "@/context/LoginContext";
 import styles from './CartItemCard.module.css'
 
 
-export default function CartItemCard({product}) {
+export default function CartItemCard({product, deleteCard, updateQuantity}) {
   const {loginDetails} = useContext(LoginContext)
-  const [quantity, setQuantity] = useState(1)
+
+  // Change quantity in input and save it in context
+  function handleQuantityChange(e) {
+    e.preventDefault()
+    updateQuantity(product.ProductId, e.target.value)
+  }
 
   // Delete cart items
-  // async function handleDeleteCartItems(e) {
-  //   e.preventDefault()
-  //   await deleteCartItem({
-  //     ProductId: product.ProductId, 
-  //     UserId: loginDetails.UserId
-  //   })
-  // }
+  async function handleDeleteCartItems(e) {
+    e.preventDefault()
+    await deleteCartItem({
+      ProductId: product.ProductId, 
+      UserId: loginDetails.UserId
+    })
+    deleteCard(product.ProductId)
+  }
   
   return (
 
@@ -35,12 +41,10 @@ export default function CartItemCard({product}) {
             name="quantity"
             id="quantity"
             type="number"
-            value={quantity}
-            onChange={(e) => {
-              setQuantity(e.target.value);
-            }}
+            value={product.quantity}
+            onChange={handleQuantityChange}
           /></label>
-          <DeleteOutlineOutlinedIcon className={styles.delete_icon} />
+          <DeleteOutlineOutlinedIcon onClick={handleDeleteCartItems} className={styles.delete_icon} />
       </div>
     </div> 
 

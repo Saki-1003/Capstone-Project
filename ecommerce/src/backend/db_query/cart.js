@@ -47,5 +47,11 @@ export async function postCartItem(cart_item) {
 export async function deleteCartItem(cart_item) {
   const connection = await getDBConnection();
   await connection.query('DELETE FROM cart_items WHERE ProductId = ? and UserId = ?', Object.values(cart_item))
+}
+
+// Delete cart_item from database
+export async function deleteCartItemsByUserId(userID) {
+  const connection = await getDBConnection();
+  await connection.query('DELETE FROM cart_items WHERE UserId = ?', [userID])
 
 }

@@ -5,8 +5,8 @@ import { useState } from "react"
 
 export const ShoppingCartContext = createContext({})
 
-export function ShoppingCartContexttProvider(props) {
-  const [ cartContent, setCartContent ] = useState({})
+export function ShoppingCartContextProvider(props) {
+  const [ cartContent, setCartContent ] = useState([])
 
   const handleChange = (item) => {
     setCartContent(item)

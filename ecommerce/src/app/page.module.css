@@ -170,17 +170,38 @@
   text-shadow: 1px 0 blue;
 }
 
-/*checkout*/
+/*checkout page (/checkout)*/
 
-.main_flexbox {
+.div_flexbox {
   display: flex;
+}
+.order_confirmation {
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
 }
 
 .checkout_side {
-  flex-basis: 40%;
+  background-color: aliceblue;
+  height: 100vh;
+  flex-basis: 35%;
+  padding-left: 4rem;
 }
 
 .checkout_section {
   flex-basis: 50%;
 }
 
+.total {
+  font-size: 2.5rem;
+  margin-top: 5rem;
+  margin-right: 5rem;
+  text-align: right;
+}
+.amount {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-right: 5rem;
+  text-align: right;
+}

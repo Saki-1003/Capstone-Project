@@ -6,7 +6,7 @@ import { useState } from "react"
 export const QuantityContext = createContext({})
 
 export function QuantityContextProvider(props) {
-  const [ quantity, setQuantity ] = useState({})
+  const [ quantity, setQuantity ] = useState([])
 
   const handleChange = (quantity) => {
     setQuantity(quantity)

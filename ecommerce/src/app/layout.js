@@ -3,7 +3,7 @@ import "./globals.css";
 import { LoginContextProvider } from "@/context/LoginContext";
 import { WishlistContextProvider } from "@/context/WishlistContext";
 import InitializeContextData from "@/components/InitializeContextData";
-import { ShoppingCartContexttProvider } from "@/context/ShoppingCartContext";
+import { ShoppingCartContextProvider } from "@/context/ShoppingCartContext";
 
 const roboto = Roboto({ subsets: ["latin"], weight:"400" });
 
@@ -26,11 +26,11 @@ export default function RootLayout({
       <body className={roboto.className}>
         <LoginContextProvider>
           <WishlistContextProvider>
-            <ShoppingCartContexttProvider>
-            <InitializeContextData />
-            {children}
-            {/* {isRegistered ? login : signup} */}
-            </ShoppingCartContexttProvider>
+            <ShoppingCartContextProvider>
+                <InitializeContextData />
+                {children}
+                {/* {isRegistered ? login : signup} */}
+            </ShoppingCartContextProvider>
           </WishlistContextProvider>
         </LoginContextProvider>
       </body>

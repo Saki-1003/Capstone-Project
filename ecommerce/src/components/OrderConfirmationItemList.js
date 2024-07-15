@@ -1,22 +1,14 @@
-import { useContext } from "react"
-import { ShoppingCartContext } from "@/context/ShoppingCartContext"
+"use client"
+
+import styles from './OrderConfirmationItemList.module.css'
 
 export default function OrderConfirmationListItem({product}) {
-  const {cartContent} = useContext(ShoppingCartContext)
-  console.log(cartContent)
-  const itemsInCart = Object.keys(cartContent).length && cartContent.map((product)=><OrderConfirmationListItem product={product} />)
 
-  
   return (
-    <div>
-      {/* <h2>Order Confirmation</h2>
-      {Object.keys(cartContent).length && cartContent.map((product)=>{
-        <h3>{product.product_title}</h3>
-        
-      }}
-      <p>Total:</p>
-      <p>NZD {product.sell_price}</p>
-      <p>Quantity: </p> */}
-  </div>
+    <div className={styles.item_container}> 
+      <h3 className={styles.title}>{product.product_title}</h3>
+      <p className={styles.sell_price}>NZD {product.sell_price}</p>
+      <p className={styles.quantity}>Quantity: {product.quantity}</p>
+    </div>
   )
 }

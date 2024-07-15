@@ -59,8 +59,11 @@ export default function SignIn() {
         password: password,
         UserId: matchingUser.UserId 
       })
+      router.push('/')
+    } else {
+     
     }
-    router.push(matchingUser? '/' : '/user/signup')
+    
   }
 
   return (
