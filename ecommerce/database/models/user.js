@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     address_line1:  DataTypes.STRING, allowNull: false,
     address_line2:  DataTypes.STRING, allowNull: true,
     city:  DataTypes.STRING, allowNull: false,
-    postal_code:  DataTypes.INTEGER, allowNull: false,
+    postal_code:  DataTypes.STRING, allowNull: false,
     region:  DataTypes.STRING, allowNull: true,
     country: DataTypes.STRING, allowNull: false,
   }, {

@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      WishlistId: {
+      UserId: {
         type: Sequelize.INTEGER,
       },
       ProductId: {

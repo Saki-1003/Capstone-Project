@@ -48,7 +48,7 @@ module.exports = {
         allowNull: false,
       },
       postal_code: {
-        type: Sequelize.INTEGER, 
+        type: Sequelize.STRING, 
         allowNull: false,
       },
       region: {
@@ -61,11 +61,13 @@ module.exports = {
 
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },

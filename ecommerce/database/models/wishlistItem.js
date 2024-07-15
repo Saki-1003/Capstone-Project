@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
      
-      Wishlist_Item.belongsTo(models.Wishlist)
-      models.Wishlist.hasMany(Wishlist_Item)
+      Wishlist_Item.belongsTo(models.User)
+      models.User.hasMany(Wishlist_Item)
 
       Wishlist_Item.belongsTo(models.Product)
       models.Product.hasMany(Wishlist_Item)

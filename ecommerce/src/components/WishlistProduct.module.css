@@ -1,0 +1,55 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+
+
+.wishlist_figure {
+  margin: 0;
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.wishlist_desc {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 2rem;
+}
+
+.img {
+  width: 100px;
+  max-height: 100px;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.title {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.icon_container {
+  display: inline-block;
+}
+
+.delete_icon {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.cart_icon {
+  font-size: 2.5rem;
+}
+
+.delete_icon:hover,
+.cart_icon:hover {
+  color: blue;
+  transform: scale(1.05);
+}

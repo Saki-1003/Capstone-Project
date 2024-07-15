@@ -15,9 +15,9 @@ export default function NavDrawer() {
   const [open, setOpen] = useState(false);
   const navMenu = ["product", "news", "gallery", "about", "contact"]
   const navIcon = [
-    {title:"login", icon: <PersonOutlineOutlinedIcon style={{fontSize:"2rem",paddingRight: "2px"}} />},
-    {title: "wishlist", icon: <FavoriteBorderIcon  style={{fontSize:"2rem", paddingRight: "2px"}} />},  
-    {title: "cart", icon: <ShoppingCartOutlinedIcon  style={{fontSize:"2rem", paddingRight: "2px"}} />}
+    {title:"login", icon: <PersonOutlineOutlinedIcon style={{fontSize:"2.5rem",paddingRight: "2px", transform: "translateY(25%)"}} />},
+    {title: "wishlist", icon: <FavoriteBorderIcon  style={{fontSize:"2.5rem", paddingRight: "3px", transform: "translateY(30%)"}} />},  
+    {title: "cart", icon: <ShoppingCartOutlinedIcon  style={{fontSize:"2.5rem", paddingRight: "3px", transform: "translateY(25%)"}} />}
   ]
   
   function toggleDrawer() {
@@ -30,9 +30,9 @@ export default function NavDrawer() {
     <>
       <MenuIcon sx={{fontSize: "3.5rem"}} onClick={toggleDrawer}/>
       <Drawer open={open} onClose={toggleDrawer} variant="temporary">
-        {navMenu.map(item => <Link key={item} href="'/'+ {item}" style={{padding: 30}}>{item.toUpperCase()}</Link>)}
+        {navIcon.map(item => <Link key={item.title} href="'/'+ {item.title}" style={{padding: 50}}>{item.icon}{item.title.toUpperCase()}</Link>)}
         <hr />
-        {navIcon.map(item => <Link key={item.title} href="'/'+ {item.title}" style={{padding: 30}}>{item.icon}{item.title.toUpperCase()}</Link>)}
+        {navMenu.map(item => <Link key={item} href="'/'+ {item}" style={{padding: 50}}>{item.toUpperCase()}</Link>)}
       </Drawer>
     </>
   )

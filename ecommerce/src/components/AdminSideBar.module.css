@@ -1,0 +1,48 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+@value cGrey: #3b3b3b;
+
+.aside {
+  height: 100vh;
+  box-sizing: border-box;
+  padding-left: 3rem;
+  margin-top: 3rem;;
+  border-right: 1px solid lightgray;
+}
+
+.operations {
+  font-size: 2rem;
+  color: cGrey;
+  padding-top: 5rem;
+}
+
+.headings {
+  font-size: 1.5rem;
+  color: cGrey;
+  margin-top: 5rem;;
+}
+
+.link {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: cGrey;
+  padding-top: 1rem;;
+  padding-left: 1rem;
+}
+
+.link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.homelink {
+  display: inline-block;
+  margin-top: 5rem;
+  font-size: 1.3rem;
+}
+
+.homelink:hover {
+  color: blue;
+  text-decoration: underline;
+}

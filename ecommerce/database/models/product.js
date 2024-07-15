@@ -13,11 +13,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
     ProductId: DataTypes.INTEGER, allowNull: false, autoIncrement:true, primaryKey: true,
-    product_code: DataTypes.INTEGER, allowNull: false, unique: true,
     product_title: DataTypes.STRING, allowNull: false,
     cost: DataTypes.FLOAT, allowNull: false,
     sell_price: DataTypes.FLOAT, allowNull: false,
-    quantity: DataTypes.INTEGER, allowNull: false,
     attribute1_size: DataTypes.STRING, allowNull: true,
     attribute2_color: DataTypes.STRING, allowNull: true,
     attribute3: DataTypes.STRING, allowNull: true,

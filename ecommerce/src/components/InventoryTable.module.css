@@ -1,0 +1,42 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+
+
+.section {
+  max-width: 700px;
+  margin: 5rem auto;
+}
+
+.headingcontainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.form-heading {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: cOrange;
+  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+}
+
+.table {
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.thead {
+  background-color: bisque;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
+.td {
+  background-color: aliceblue;
+  /* border: 1px solid grey; */
+  font-size: 1.2rem;
+  text-align: center;
+}

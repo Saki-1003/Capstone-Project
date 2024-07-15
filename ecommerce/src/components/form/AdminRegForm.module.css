@@ -1,0 +1,81 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+
+.section {
+  max-width: 700px; 
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem 12rem;
+  border: 1px solid cOrange;
+  border-radius: 10px;
+  position: relative;
+}
+
+.headingcontainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-heading {
+  font-size: 2rem;
+  font-weight: 400;
+  color: cOrange;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.label {
+  display: inline-block;
+  font-size: 1.2rem;
+  width: 20rem;
+  color: #3b3b3b;
+  
+}
+
+.input {
+  max-width: 30rem;
+  width: 100%;
+  height: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: rgb(240, 255, 255, 0.5);
+  margin-bottom: 1rem;;
+  padding-left: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: cOrange;
+  color: #fff;
+  border: 1px solid #E15A28;
+  border-radius: 5px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 10rem;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 1px 1px 1px #E15A28;
+
+}
+
+
+@media screen and (max-width: 767px){
+  .section {
+    padding-bottom: 7rem;
+    position: relative;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 0;
+    right: 10rem;
+  }
+  
+}
+

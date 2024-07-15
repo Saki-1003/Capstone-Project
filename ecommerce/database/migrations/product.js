@@ -9,11 +9,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      product_code: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        unique: true,
-      },
       product_title: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -24,10 +19,6 @@ module.exports = {
       },
       sell_price: {
         type: Sequelize.FLOAT, 
-        allowNull: false, 
-      },
-      quantity: {
-        type: Sequelize.INTEGER, 
         allowNull: false, 
       },
       attribute1_size: {
@@ -60,11 +51,13 @@ module.exports = {
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       SupplierId: {
         type: Sequelize.INTEGER,

@@ -1,16 +1,18 @@
-import Sequelize from 'sequelize'
-import config from './config/config.mjs';
+"use server";
 
-let sequelize;
-if(process.env.NODE.ENV === 'production') {
-  sequelize = new Sequelize(config.production)
-} else if (process.env.NODE.ENV === 'test') {
-  sequelize = new Sequelize(config.test)
-} else {
-  sequelize = new Sequelize(config.development)
+import mysql from 'mysql2/promise'
+
+let cachedConnection = null;
+
+export default async function getDBConnection() {
+  if (cachedConnection) return cachedConnection
+
+  cachedConnection = await mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+  })
+
+  return cachedConnection
 }
-
-const connection = sequelize;
-
-export default connection
-

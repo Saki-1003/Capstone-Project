@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     supplier_address1:  DataTypes.STRING, allowNull: false,
     supplier_address2:  DataTypes.STRING, allowNull: true,
     city:  DataTypes.STRING, allowNull: false,
-    postal_code:  DataTypes.INTEGER, allowNull: false,
+    postal_code:  DataTypes.STRING, allowNull: false,
     region:  DataTypes.STRING, allowNull: true,
     country: DataTypes.STRING, allowNull: false,
     email: DataTypes.STRING, allowNull: true, unique: true,

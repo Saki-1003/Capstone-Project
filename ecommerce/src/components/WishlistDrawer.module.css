@@ -1,0 +1,14 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+
+
+.wishlist {
+  color: cOrange;
+  font-size: 3rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px lightgray;
+  width: 40rem; 
+  padding: 3rem;
+  border-bottom: 1px solid lightgrey;
+}

@@ -1,0 +1,24 @@
+@value cGreen: #0FA958;
+@value cBlue: #4939FF;
+@value cOrange: #FF9A62;
+
+.btn_container {
+  width: 70%;
+  margin: 0 auto;
+}
+.btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-top: 4rem;
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  box-shadow: 1px 1px 1px rgb(0, 0, 83);
+
+}

@@ -1,5 +1,9 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { LoginContextProvider } from "@/context/LoginContext";
+import { WishlistContextProvider } from "@/context/WishlistContext";
+import InitializeContextData from "@/components/InitializeContextData";
+import { ShoppingCartContexttProvider } from "@/context/ShoppingCartContext";
 
 const roboto = Roboto({ subsets: ["latin"], weight:"400" });
 
@@ -15,14 +19,20 @@ export default function RootLayout({
   admin
 }) {
 
-  const isRegistered = false
+  // const isRegistered = false
 
   return (
     <html lang="en">
       <body className={roboto.className}>
-        {children}
-        {isRegistered ? login : signup}
-
+        <LoginContextProvider>
+          <WishlistContextProvider>
+            <ShoppingCartContexttProvider>
+            <InitializeContextData />
+            {children}
+            {/* {isRegistered ? login : signup} */}
+            </ShoppingCartContexttProvider>
+          </WishlistContextProvider>
+        </LoginContextProvider>
       </body>
     </html>
   );
