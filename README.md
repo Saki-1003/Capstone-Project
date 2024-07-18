@@ -1,4 +1,4 @@
-A repository for IOD Capstone Project - Ecommerce for honey products
+A repository for IOD Capstone Project - Ecommerce for honey products built with Next.js.
 
 From the shop owners perspective, this application serves the funcitionalities to manage products and suppliers in database as well as the basic inventory management functionality.
 Customer users can use the functionalities expected in any ecommerce websites such as signup, wishlist, shopping cart and checkout (Note it does not support the real payment transaction).
