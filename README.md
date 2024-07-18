@@ -48,8 +48,8 @@ Steps for setup:
 
 7. To migrate schemas, run npx sequelize-cli db:migrate --env development in the VS Code terminal. Now, the tables should have been created in your MySQL Workbench but tables don't have the relationship as yet.
    Associations(relationship) need to be migrated separately after the schemas have been migrated into the database. If you try to migrate the associations before the tables get created in the database, it will cause error.
-8. To migrate associations(relationship), go to ecommerce->database->migrations->associations folder. Inside this associations folder, there are 6 files. Move all 6 association files outside of the folder.
-   (now these 6 files should have been placed directly under the migrantions folder in the same layer as the schemas that had been migrated in 5.) 
-9. Run npm run dev in the VS Code terminal.
+8. To migrate associations(relationship), go to ecommerce->database->migrations->associations folder. Inside this associations folder, there are 6 files. Move all 6 association files outside of the folder. (now these 6 files should have been placed directly under the migrantions folder in the same layer as the schemas that had been migrated in 5.)
+9. Run 'npx sequelize-cli db:migrate --env development' again. This will create the relationship between tables in the datatbase. 
+10. Run npm run dev in the VS Code terminal.
 
 If everything was successful, a landing page will show up.
