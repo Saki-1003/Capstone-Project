@@ -11,6 +11,8 @@ export async function createOrder (data) {
     UserId: data.get("UserId")
   }
   const orderID = await postOrder(order)
+  
+  // create order item and delete cart items at the same time when order is created
   const cartItems = await getCartItemsByUser(data.get("UserId"))
   const productIDs = cartItems.map((item)=>item.ProductId)
   productIDs.forEach(async (ID) => {

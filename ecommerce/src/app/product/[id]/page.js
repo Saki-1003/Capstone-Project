@@ -1,29 +1,48 @@
 "use client"
-import { getProducts } from "@/backend/db_query/product";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
 import styles from '../../page.module.css'
-
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "next/navigation";
+import { LoginContext } from "@/context/LoginContext";
+import { ShoppingCartContext } from "@/context/ShoppingCartContext";
+import { getProducts } from "@/backend/db_query/product";
+import { createCartItem } from "@/backend/server_actions/cart";
 
 
 export default function ProductDetailPage() {
-
+  const {loginDetails} = useContext(LoginContext)
+  const {cartContent, handleChange} = useContext(ShoppingCartContext)
   const [products, setProducts] = useState({})
   const params = useParams()
 
   useEffect(()=>{
     async function getData() {
       const products = await getProducts()
-      const product = products.find(item=>item.ProductId==params.id)
       console.log(products)
+
+      //Find the product that matches the param(ProductId)
+      const product = products.find(item=>item.ProductId==params.id)
+      product.quantity=1
       setProducts(product)
     }
     getData()
   },[])
 
 
+  //Create cart_item 
+  const handleAddToCart = async() => {
+    if(!loginDetails.UserId) {
+      alert('Please login')
+      return
+    }
+    const cartItem = {
+      ProductId: products.ProductId, 
+      UserId: loginDetails.UserId
+    }
+    await createCartItem(cartItem)
+  }
 
   return(
     <>
@@ -35,9 +54,7 @@ export default function ProductDetailPage() {
         <section className={styles.flexitem_section}>
           <h2 className={styles.product_detail_title}>{products.product_title}</h2>
           <h2 className={styles.product_detail_sell_price}>NZD {products.sell_price}</h2>
-          <label className={styles.quantityLabel} htmlFor="quantity">Quantity:</label>
-          <input className={styles.input} type="number" name="quantity" id="quantity" /><br />
-          <div className={styles.btn_wrapper}><button className={styles.btn}>Add to cart</button></div>
+          <div className={styles.btn_wrapper}><button onClick={handleAddToCart} className={styles.btn}>Add to cart</button></div>
           <p className={styles.product_detail_summary}>Summary:</p>
           <p className={styles.product_detail_text}>{products.summary}</p>
           <p className={styles.product_detail_spec}>Specification:</p>
@@ -45,6 +62,7 @@ export default function ProductDetailPage() {
         </section>
         <Link className={styles.link} href="/product">Back to all products</Link>
       </main>
+      <Footer />
     </>
 
   )

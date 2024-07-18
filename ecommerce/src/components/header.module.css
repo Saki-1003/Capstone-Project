@@ -3,12 +3,18 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  padding: 2rem 1rem;
-  background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 55%, #FFBAC3 100%);
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: 30px solid cornflowerblue;
+  margin-bottom: 7rem;
+  /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 55%, #FFBAC3 100%); */
 }
 .h1 {
-  font-size: 2rem;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: cornflowerblue;
 }
+
 .list-wrapper {
   display: flex;
   align-items: center;
@@ -17,34 +23,26 @@
   height: 100%;
 }
 
+.wishlist {
+  font-size: 3rem;
+}
+
+.nav {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .navList {
-  font-size: 1.4rem;
-} 
-
-.dropdown {
-  font-size: 1.3rem;
-  border: 1px solid lightgrey;
-  display: none;
-  position: absolute;
-  left: -5%;
-  top: 100%;
-  height: 100%;
-  margin-top: 2rem;
+  font-size: 2rem;
+  padding-left: 3rem;
 }
 
-
-.dropdown-item {
-  list-style-type: none;
-  padding: 1rem;
-  border: 1px solid lightgrey;
-}
-
-.dropdown-item:hover {
-  color: aqua;
-}
-
-.material-icons {
-  padding-right: 1.6rem;
+.navList:hover {
+  color: cornflowerblue;
+  font-weight: 900;
+  
 }
 
 .mobileNav {
@@ -53,7 +51,7 @@
 
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   .nav {
     display: none;
   }

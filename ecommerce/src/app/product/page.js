@@ -3,6 +3,7 @@ import ProductCard from "@/components/productCard";
 import { getProducts } from "@/backend/db_query/product";
 import styles from '../page.module.css'
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
 export default async function ProductPage() {
@@ -18,6 +19,7 @@ export default async function ProductPage() {
         {products.map((product) => <ProductCard product={product} />)}
         </div>
       </main>
+      <Footer />
     </>
   );
 }

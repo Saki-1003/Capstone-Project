@@ -94,14 +94,20 @@
   }
   
   .quantityLabel {
-    display: block;
-    padding-left: 1rem;
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .delete_icon {
+    width: 10%;
+    margin-left: 2rem;
   }
 
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 775px) {
   .card {
     width: 80%;
     height: auto;
@@ -132,17 +138,40 @@
      margin-bottom: 1rem;;
    }
    
-   
    .quantityLabel {
-     display: block;
-     width: 100%;
-     margin-bottom: 2rem;
+     width: 80%;
    }
-   
    
    .summary {
      width: 100%;
-     margin-bottom: 3rem;
+     margin-bottom: 1.5rem;
    }
    
+}
+
+@media screen and (max-width: 505px) {
+  .title {
+    width: 100%;
+    display: block;
+  }
+  
+  .price {
+    width: 100%;
+    display: block;
+    text-align: center;
+  } 
+  .summary {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-right: 0;
+  }
+  .quantityLabel {
+    width: 30%;
+  }
+
+  .delete_icon {
+    width: 10%;
+    margin-left: 5rem;
+  }
+  
 }

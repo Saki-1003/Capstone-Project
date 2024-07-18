@@ -3,6 +3,95 @@
 @value cOrange: #FF9A62;
 @value cGrey: #3b3b3b;
 
+/*landing page(/)*/
+
+.container_lp {
+  display: flex;
+  position: relative;
+}
+
+.h1_wrapper {
+  display: flex;
+  position: absolute;
+  top: 4rem;
+  right: 8rem;
+  z-index: 2;
+  padding: 5rem;
+  background-color: (255,255,255, 0.5);
+}
+
+.h1 {
+  color: cornflowerblue;
+  letter-spacing: 0.5rem;
+  font-size: 5rem;
+  padding-left: 2rem;
+}
+.nav_section {
+  width: 5%;
+  height: 100vh;
+  background-color: cornflowerblue;
+  text-align: center;
+  padding-left: 2.5rem;
+}
+
+.main_img_section {
+  width: 95%;
+}
+.main_img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: grayscale(40%)
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media screen and (max-width:1650px){
+  .nav_section {
+    width: 7%;
+    padding-left: 3.5rem;
+  }
+}
+
+@media screen and (max-width:1420px){
+  .nav_section {
+    width: 7%;
+    padding-left: 2.5rem;
+  }
+}
+@media screen and (max-width:1024px){
+  .h1_wrapper {
+    height: 15vh;
+    top: 4rem;
+    left: 2rem;
+  }
+  .main_img_section {
+    width: 100%;
+    margin-top: 15vh;
+  }
+  .main_img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    filter: grayscale(40%)
+  }
+  .nav_section {
+    display: none;
+  }
+  .main_img_section {
+    width: 100%;
+  }
+  .mobileNav {
+    display: inline-block;
+    position: absolute;
+    top: 10rem;
+    right: 0;
+  }
+  
+}
+
 
 /*admin*/
 
@@ -10,7 +99,8 @@
   color: cBlue;
   font-size: 3rem;
   font-weight: 400;
-  padding-left: 2rem;
+  text-shadow: 1px 1px 3px #999999;
+  padding-left: 4rem;
 }
 
 .flexbox {
@@ -44,10 +134,12 @@
   margin: 0 auto;
 }
 
+
 /*shopping cart page(/cart)*/
 
 .cart_container {
   max-width: 80%;
+  height: 120vh;
   margin: 5rem  auto;
 }
 
@@ -56,6 +148,7 @@
   font-weight: 400;
   text-align: center;
   margin-bottom: 5rem;
+  color: #999999;
 }
 
 /*product detail page(/product/[id])*/
@@ -71,8 +164,8 @@
 }
 .image_wrrapper {
   flex-basis: 30%;
-  margin: 0;
-  width: 30rem;
+  margin: 2rem 0;
+  width: 40rem;
 }
 .flexitem_section {
   flex-basis: 50%;
@@ -82,7 +175,6 @@
 
 .propduct_detail_img {
   width: 100%;
-  height: 60vh;
   object-fit: cover;  
 }
 
@@ -97,7 +189,6 @@
   font-size: 3rem;
   padding: 1rem;
   margin-bottom: 5rem;;
-
 }
 
 .quantityLabel {
@@ -170,10 +261,58 @@
   text-shadow: 1px 0 blue;
 }
 
-/*checkout page (/checkout)*/
+@media screen and (max-width: 1024px){
+  .product_detail_container {
+    width: 70%;
+    display: block;
+    flex-flow: row wrap;
+    gap: 12rem;
+    margin: 5rem auto;
+    position: relative;
+  }
+
+  .image_wrrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .propduct_detail_img {
+    width: 90%;
+  }
+
+  .flexitem_section {
+    width: 100%;
+  }
+
+  .product_detail_title {
+    width: 60%;
+    display: inline-block;
+  }
+
+  .product_detail_sell_price {
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .btn_wrapper {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
+
+  .link {
+    display: block;
+    position: static;
+    margin-left: 3rem;
+  } 
+}
+
+/*checkout page(/checkout) & payment page(/payment)*/
 
 .div_flexbox {
   display: flex;
+  height: 100%;
 }
 .order_confirmation {
   font-size: 2.5rem;
@@ -204,4 +343,73 @@
   margin-top: 1rem;
   margin-right: 5rem;
   text-align: right;
+}
+
+.link_to_cart {
+  display: inline-block;
+  width: 80%;
+  font-size: 1.5rem;
+  color: blue;
+  position: absolute;
+  bottom: 10%; 
+  left: 3%;
+}
+
+.link_to_cart:hover {
+  text-decoration: underline;
+  text-shadow: 1px 0 blue;
+}
+
+
+@media screen and (max-width: 1024px){
+  .div_flexbox {
+    flex-direction: column;
+  }
+  .order_confirmation {
+    text-align: center;
+  }
+  .checkout_side {
+    background-color: aliceblue;
+    height: 100vh;
+    flex-basis: 35%;
+    padding-bottom: 4rem;
+  }
+  .link_to_cart {
+    display: block;
+    position: static;
+    margin-left: 15%;
+    margin-bottom: 10%;
+  }
+}
+
+/*thank you page(/thankyou)*/
+
+.main_thank_you {
+  width: 50%;
+  margin: 10vh auto;
+  text-align: center;
+  height: 80vh;
+}
+
+.title_thank_you {
+  font-size: 5rem;
+  color: cOrange;
+  margin-bottom: 3rem;
+
+}
+.text_thank_you {
+  font-size: 2rem;
+  color: cOrange;
+  margin-bottom: 2rem;
+}
+
+.link_thank_you {
+  display:block;
+  padding-top: 8rem;
+  font-size: 1.8rem;
+  color: blue;
+}
+
+.link_thank_you:hover {
+  text-decoration: underline;
 }

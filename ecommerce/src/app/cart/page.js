@@ -9,6 +9,7 @@ import CheckoutButton from "@/components/CheckoutButton";
 import CartIsEmpty from "@/components/CartIsEmpty";
 import Header from "@/components/Header";
 import styles from '../page.module.css'
+import Footer from "@/components/Footer";
 
 
 export default function ShoppingCartPage() {
@@ -26,7 +27,10 @@ export default function ShoppingCartPage() {
 
       const filteredCartItems = cartItemData.filter((item)=>item.UserId===loginDetails.UserId)
       const productsInCart = productData.filter((product)=>filteredCartItems.find((item)=>item.ProductId===product.ProductId))
+
+      //appending quantity property to each product in cart and setting the default value as 1
       const product = productsInCart.map((product)=> ({...product, quantity:1}))
+
       setProductList(product)
       handleChange(product)
     }
@@ -39,6 +43,7 @@ export default function ShoppingCartPage() {
     handleChange(remainingItems)
   }
 
+  //function to update the quantity with user input value which is passed from the CartItemCard component
   const updateQuantity = (ID, quantity) => {
     const items = [...productList]
     items.find((product) => product.ProductId === ID).quantity=quantity
@@ -46,16 +51,17 @@ export default function ShoppingCartPage() {
     handleChange(items)
   }
   
-  const cartItems = productList.length && productList.map((product)=><div><CartItemCard product={product} deleteCard={deleteCard} updateQuantity={updateQuantity} /></div>)
+  const cartItems = productList.length && productList.map((product)=><div key={product.ProductId}><CartItemCard product={product} deleteCard={deleteCard} updateQuantity={updateQuantity} /></div>)
   
   return (
     <>
       <Header />
       <div className={styles.cart_container}>      
         <h2 className={styles.heading_shopping_cart}>Shopping Cart</h2>
-        {cartItems}
+        {cartItems? cartItems: ""}
         {productList.length ? <CheckoutButton /> : <CartIsEmpty />}
       </div>
+      <Footer />
  
     </>
   );

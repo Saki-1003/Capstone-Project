@@ -3,7 +3,6 @@ import { useState, useContext } from 'react'
 import { WishlistContext } from '@/context/WishlistContext';
 import WishlistProductItem from './WishlistProduct';
 import styles from './WishlistDrawer.module.css'
-
 import { Drawer } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
@@ -15,16 +14,14 @@ export default function WishlistDrawer() {
   function toggleDrawer() {
     setOpen(!open);
   }
-  const products = added.map((product)=> <WishlistProductItem product={product} />)
+  const products = added.map((product)=> <WishlistProductItem key={product.ProductId} product={product} />)
   
   return (
     <>
-      <FavoriteBorderIcon sx={{fontSize: "2.5rem"}} onClick={toggleDrawer}/>
+      <FavoriteBorderIcon sx={{fontSize: "4rem", transform: "translateY(20%)"}} onClick={toggleDrawer}/>
       <Drawer className={styles.wishlist_drawer} open={open} onClose={toggleDrawer} variant="temporary">
         <h1 className={styles.wishlist}>Wishlist</h1>
         {products}
-        
-        
       </Drawer>
        
     </>

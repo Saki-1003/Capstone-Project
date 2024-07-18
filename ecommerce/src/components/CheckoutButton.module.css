@@ -5,20 +5,31 @@
 .btn_container {
   width: 70%;
   margin: 0 auto;
+ 
 }
 .btn {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   background-color: blue;
   color: #fff;
   border: none;
   border-radius: 5px;
   margin-top: 4rem;
   font-weight: 600;
+  position: relative;
 }
 
 .btn:hover {
   transform: scale(1.02);
   box-shadow: 1px 1px 1px rgb(0, 0, 83);
+}
 
+.btn_link {
+  line-height: 3rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

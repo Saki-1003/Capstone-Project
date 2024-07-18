@@ -14,8 +14,6 @@ import { createCartItem } from '@/backend/server_actions/cart';
 import styles from './productCard.module.css'
 
 
-
-
 export default function ProductCard({product}) {
   const {added, handleChange, deleteProduct} = useContext(WishlistContext)
   const isAdded = !!added.find(item => item.ProductId == product.ProductId )

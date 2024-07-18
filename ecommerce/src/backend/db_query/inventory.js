@@ -3,19 +3,27 @@
 import { revalidatePath } from "next/cache";
 import getDBConnection from "../../../database/connection";
 
-// GET all invemtory from database
+// GET all inventory from database
 export async function getInventories() {
   const connection = await getDBConnection();
   const [inventories] = await connection.query('SELECT * FROM inventories')
   return inventories
 }
 
-// GET matching inventories from database
-// export async function getInventory(ProductId) {
-//   const connection = await getDBConnection();
-//   const [inventories] = await connection.query('SELECT ProductId FROM inventories WHERE ProductId = ?', [ProductId])
-//   return inventories
-// }
+// GET inventories by ProductId
+export async function getInventoriesByProductId(productID) {
+  const connection = await getDBConnection();
+  const [inventories] = await connection.query('SELECT * FROM inventories WHERE ProductId = ?', [productID])
+  return inventories
+}
+
+// GET the first inventory by ProductId
+export async function getFirstInventoryByProductId(productID) {
+  const connection = await getDBConnection();
+  const [inventories] = await connection.query('SELECT * FROM inventories WHERE ProductId = ?', [productID])
+  const inventory = inventories[0]
+  return inventory
+}
 
 //CREATE a new inventory in database
 export async function postInventory(inventory) {
@@ -33,7 +41,7 @@ export async function postInventory(inventory) {
 }
 
 //UPDATE quantity of matching product in inventories
-export async function updateProduct(quantity, ProductId) {
+export async function updateInventory(quantity, ProductId) {
   const connection = await getDBConnection();
   await connection.query(`
     UPDATE inventories 

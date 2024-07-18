@@ -1,0 +1,17 @@
+.drawer {
+  width: 45%;
+}
+
+.drawer_menu {
+  margin-top: 10rem;
+  font-size: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.drawer_menu_wishlist {
+  margin-top: 10rem;
+  font-size: 3rem;
+  list-style-type: none;
+  padding-left: 4rem;
+}

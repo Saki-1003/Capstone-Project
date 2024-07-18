@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { useState } from 'react'
 import { getUsers } from '@/backend/db_query/user';
+import { getAdmins } from '@/backend/db_query/admin';
 import { useRouter } from 'next/navigation';
 import { useContext } from 'react';
 import { LoginContext } from '@/context/LoginContext';
@@ -51,17 +52,23 @@ export default function SignIn() {
 
   async function handleLogin() {
     const users = await getUsers()
+    const admins = await getAdmins()
     console.log(users)
+
     const matchingUser = users.find((user)=>user.email === userInput.email && user.password === userInput.password)
-    if(matchingUser) {
+    const matchingAdmin = admins.find(admin => admin.email === userInput.email && admin.password === userInput.password)
+
+    if (matchingUser) {
       handleChange({
         email: email,
         password: password,
         UserId: matchingUser.UserId 
       })
       router.push('/')
+    } else if (matchingAdmin) {
+      router.push('/admin/dashboard')
     } else {
-     
+      alert('Incorrect email or password. Please try again')
     }
     
   }
@@ -132,13 +139,9 @@ export default function SignIn() {
             </Button>
          
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
+
               <Grid item>
-                <Link href="/user/signup" variant="body2">
+                <Link href="/user/signup" sx={{color:"blue"}} variant="body1">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

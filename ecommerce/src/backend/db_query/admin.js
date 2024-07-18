@@ -3,7 +3,12 @@
 import { revalidatePath } from "next/cache";
 import getDBConnection from "../../../database/connection";
 
-
+// GET all admins from database
+export async function getAdmins() {
+  const connection = await getDBConnection();
+  const [admins] = await connection.query('SELECT * FROM admins')
+  return admins
+}
 
 // GET a matching admin from database
 export async function getAdmin(adminID) {

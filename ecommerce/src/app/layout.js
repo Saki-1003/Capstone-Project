@@ -13,13 +13,9 @@ export const metadata = {
 };
 
 export default function RootLayout({
-  children,
-  login,
-  signup,
-  admin
+  children
 }) {
 
-  // const isRegistered = false
 
   return (
     <html lang="en">
@@ -29,7 +25,6 @@ export default function RootLayout({
             <ShoppingCartContextProvider>
                 <InitializeContextData />
                 {children}
-                {/* {isRegistered ? login : signup} */}
             </ShoppingCartContextProvider>
           </WishlistContextProvider>
         </LoginContextProvider>

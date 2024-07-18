@@ -1,5 +1,5 @@
 "use client"
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { deleteCartItem } from '@/backend/db_query/cart';
 import { LoginContext } from "@/context/LoginContext";

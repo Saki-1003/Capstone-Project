@@ -1,4 +1,3 @@
-
 import AdminRegForm from "@/components/form/AdminRegForm"
 import AdminUpdateForm from "@/components/form/AdminUpdateForm"
 import AdminSideBar from "@/components/AdminSideBar"
@@ -7,8 +6,7 @@ import styles from '../../page.module.css'
 
 
 export default function AdminHomePage() {
-
-
+ 
   return (
     <>
     <main className={styles.flexbox}>
@@ -16,10 +14,10 @@ export default function AdminHomePage() {
         <AdminSideBar />
       </section>
       <section className={styles.flexitem2}>
-        <h2 className={styles.welcome}>Welcome Admin1</h2>
+        <h2 className={styles.welcome}>Admin dashboard</h2>
+        <InventoryTabele />
         <AdminRegForm />
         <AdminUpdateForm />
-        <InventoryTabele />
       </section>
     </main>
       </>

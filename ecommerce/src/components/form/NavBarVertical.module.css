@@ -1,0 +1,18 @@
+.nav {
+  width: 10%;
+  height: 100vh;
+  background-color: cornflowerblue;
+}
+
+.material-icons {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 10rem;
+  color: 	#F0FFFF;
+}
+
+.material-icons:hover {
+  color: blue;
+}
+
