@@ -35,7 +35,7 @@ export default function WishlistProductItem({product}) {
   return (
     <div calssName={styles.card}>
       <figure className={styles.wishlist_figure}>
-        <img className={styles.img} src="/product1.jpg" />
+        <img className={styles.img} src={`/product${product.ProductId}.jpg`} />
       </figure>
       <div className={styles.wishlist_desc}>
         <h3 className={styles.title}>{product.product_title}</h3>

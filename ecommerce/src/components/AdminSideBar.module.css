@@ -11,6 +11,34 @@
   border-right: 1px solid lightgray;
 }
 
+.mobileNav {
+  display: none;
+}
+
+.drawer {
+  width: 45%;
+  /* display: none; */
+}
+.drawer_title {
+  padding-left: 2rem;
+}
+.drawer_subtitle {
+  padding-left: 2rem;
+}
+.drawer_menu {
+  font-size: 1.5rem;
+  color: cGrey;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 4rem;
+}
+
+.drawer_menu:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+
 .operations {
   font-size: 2rem;
   color: cGrey;
@@ -45,4 +73,19 @@
 .homelink:hover {
   color: blue;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .aside {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+
+  }
+
 }

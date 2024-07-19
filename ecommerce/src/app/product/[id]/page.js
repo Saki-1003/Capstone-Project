@@ -49,7 +49,7 @@ export default function ProductDetailPage() {
       <Header />
       <main className={styles.product_detail_container}>
         <figure className={styles.image_wrrapper}>
-          <img className={styles.propduct_detail_img} src="/product1.jpg" />
+          <img className={styles.propduct_detail_img} src={`/product${params.id}.jpg`} />
         </figure>
         <section className={styles.flexitem_section}>
           <h2 className={styles.product_detail_title}>{products.product_title}</h2>

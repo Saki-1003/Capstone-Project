@@ -61,7 +61,7 @@ export default function ProductCard({product}) {
   return(
       <article className={styles.card}>
         <Link href={`/product/${product.ProductId}`}>
-          <img className={styles.card_img} src="/product1.jpg" />
+          <img className={styles.card_img} src={`/product${product.ProductId}.jpg`} />
 
           <div className={styles.card_body}>
             <h3 className={styles.title}>{product.product_title}</h3>

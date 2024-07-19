@@ -23,7 +23,7 @@ export default function Header() {
             <circle cx="34.985" cy="11.38" r="2.052" fill="none" stroke="#6495ED" strokeLinecap="round" strokeLinejoin="round"/>
             <path fill="none" stroke="#6495ED" strokeLinecap="round" strokeLinejoin="round" d="M33.26 18.99c.985-1.223 3.242-3.457 6.112-3.79m-8.795 3.271a8.93 8.93 0 0 1 2.733-5.932"/>
           </svg>
-          Online Shop
+          Honey Buzz
         </h1>
       </Link>
 

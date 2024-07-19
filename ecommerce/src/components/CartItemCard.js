@@ -29,7 +29,7 @@ export default function CartItemCard({product, deleteCard, updateQuantity}) {
 
     <div className={styles.card}>
       <div className={styles.img_div}>
-        <img className={styles.img} src="/product1.jpg" />
+        <img className={styles.img} src={`/product${product.ProductId}.jpg`} />
       </div>
       <div className={styles.text_div}>
         <h3 className={styles.title}>{product.product_title}</h3>
